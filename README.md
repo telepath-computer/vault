@@ -4,7 +4,7 @@
 > API may change without notice between releases. Pin exact versions if
 > you depend on it.
 
-Portable filesystem memory for agents.
+Predictable filesystem memory for agents.
 
 Unlike a wiki, notes app, or vector database, a vault is a strict, typed filesystem: each top-level folder defines a record type, `VAULT.md` defines the rules, and `fslint` enforces the schema. The focus is no ambiguity on input, and effective, efficient retrieval on output. Agents can edit safely, query with normal filesystem tools, and trust the result across runs.
 
