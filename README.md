@@ -12,7 +12,13 @@ A vault starts simple and can be progressively enhanced with scripts, schemas, a
 
 ## Get started
 
-Copy the vault skill into your agent's skills directory:
+Install the vault skill with `skills`:
+
+```sh
+npx skills add telepath-computer/vault --skill vault
+```
+
+Or copy it into your agent's skills directory manually:
 
 ```sh
 cp -R skills/vault ~/.agents/skills/vault
