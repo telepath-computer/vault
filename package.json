@@ -1,4 +1,17 @@
 {
+  "name": "autofile",
+  "version": "0.1.0",
+  "description": "Predictable filesystem memory for agents.",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/telepath-computer/autofile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/telepath-computer/autofile/issues"
+  },
+  "homepage": "https://github.com/telepath-computer/autofile#readme",
   "scripts": {
     "test": "node --test"
   },
