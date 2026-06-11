@@ -15,14 +15,35 @@ Autofile is designed for:
 - **Native agent editing.** Agents can read, write, move, validate, and query records with ordinary filesystem tools, then trust the result across runs.
 - **Progressive enhancement.** A vault can start simple, then grow through skills that bundle scripts, schemas, filing rules, and operations for specific workflows or data types such as tasks, calendars, email, receipts, and more.
 
-## Anatomy and terms
+## How it works
 
-- **Autofile** is the project and installable agent skill.
-- A **vault** is the typed directory that Autofile helps an agent maintain.
-- `VAULT.md` is the root spec for a vault: it defines record types, folder rules, schemas, labels, validation commands, and any extensions.
-- Top-level folders such as `contacts/`, `places/`, and `events/` define record types.
-- A **record** is one markdown file representing one thing, with structured frontmatter and concise body text.
-- `.fslint.yml` is the machine-readable validation config kept in sync with `VAULT.md`.
+An Autofile vault is just a directory, but it is not an unstructured notes folder. The root `VAULT.md` is the contract: it describes what kinds of records exist, which folders own them, which frontmatter fields they use, what labels mean, how validation works, and which optional extensions apply.
+
+A small vault might look like this:
+
+```txt
+my-vault/
+├── VAULT.md              # the filing spec agents must follow
+├── .fslint.yml           # machine-readable validation for the spec
+├── contacts/
+│   └── priya-narayan.md  # one person or organization
+├── places/
+│   └── blue-kettle-cafe.md
+├── events/
+│   └── 2026-06-03-small-machines-visit.md
+├── references/
+│   └── risograph-printing-guide.md
+├── misc/
+│   └── desk-lamp-repair.md
+├── assets/
+│   └── risograph-guide.html
+└── special/
+    └── now.md            # operating state for the agent/user
+```
+
+Each top-level folder is a record type. Each markdown file is one record: one person, place, event, source, task, subject, or state surface. The folder tells the agent what kind of thing it is; `VAULT.md` tells the agent how to file it; `.fslint.yml` gives the vault a validation gate.
+
+Because the memory is plain files, agents can use the tools they are already good at: read a spec, grep for names and labels, follow links, match frontmatter properties, move files, edit markdown, and run validation. The structure keeps writes predictable without hiding retrieval behind a proprietary app or opaque database.
 
 ## Get started
 
@@ -50,16 +71,6 @@ Run validation with `fslint`:
 cd /path/to/vault
 npx @telepath-computer/fslint@0.3.3
 ```
-
-## What's here
-
-- `skills/autofile/SKILL.md` — agent behavior for filing and retrieving from a vault.
-- `skills/autofile/templates/VAULT.md` — starter vault spec.
-- `skills/autofile/templates/.fslint.yml` — starter schema validation.
-- `skills/autofile/INSTALL.md` — manual install instructions.
-- `skills/autofile/references/vault-spec-format.md` — format reference for `VAULT.md`.
-- `example/` — example vault.
-- `test/` — tests for the starter template and example.
 
 ## Test
 
