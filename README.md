@@ -6,7 +6,7 @@
 
 Predictable filing for agents.
 
-Like a wiki, notes app, or database, Autofile gives agents a durable place to file information. Unlike those systems, an Autofile vault is a strict, typed filesystem: it specifies the types of things that can be stored, where each type belongs, and the rules for how records should be filed and organized.
+Like a wiki, notes app, or database, Autofile gives agents a durable place to file information. Its characteristic shape is flat files with strict typing: an Autofile vault specifies the types of things that can be stored, where each type belongs, and the rules for how records should be filed and organized.
 
 Autofile is designed for:
 
