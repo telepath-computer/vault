@@ -6,7 +6,7 @@ const path = require('node:path');
 const child_process = require('node:child_process');
 
 const repo = path.resolve(__dirname, '..');
-const templateDir = path.join(repo, 'skills', 'vault', 'templates');
+const templateDir = path.join(repo, 'skills', 'autofile', 'templates');
 const exampleDir = path.join(repo, 'example');
 
 function run(command, options = {}) {
@@ -22,7 +22,7 @@ test('example vault validates with fslint', () => {
 });
 
 test('starter template can initialize a minimal vault', () => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'vault-template-'));
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'autofile-template-'));
   fs.cpSync(path.join(templateDir, 'VAULT.md'), path.join(dir, 'VAULT.md'));
   fs.cpSync(path.join(templateDir, '.fslint.yml'), path.join(dir, '.fslint.yml'));
   for (const folder of ['assets', 'references', 'contacts', 'places', 'events', 'misc', 'special']) {

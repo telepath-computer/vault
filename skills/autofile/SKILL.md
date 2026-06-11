@@ -1,9 +1,9 @@
 ---
-name: vault
+name: autofile
 description: Durable filesystem memory for agents. Use when creating, editing, filing, querying, or reorganizing a markdown vault.
 ---
 
-# Vault
+# Autofile
 
 - A vault is durable filesystem memory.
 - Use the vault as the source of truth whenever storing or retrieving information that should outlive the current task.
