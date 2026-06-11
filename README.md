@@ -50,7 +50,7 @@ Because the filing system is plain files, agents can use the tools they are alre
 Install the autofile skill with `skills`:
 
 ```sh
-npx skills add telepath-computer/autofile --skill autofile
+npx skills add telepath-computer/autofile
 ```
 
 Or copy it into your agent's skills directory manually:
